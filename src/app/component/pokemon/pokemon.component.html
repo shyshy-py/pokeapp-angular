@@ -1,0 +1,124 @@
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css"
+  rel="stylesheet"
+/>
+<!--loader-->
+<div class="center" *ngIf="loading">
+  <img class='loadAnimation'src="/assets/images/icon.ico" alt="" />
+</div>
+
+<!--end loader-->
+<body *ngIf="!loading">
+  <br /><br />
+  <div>
+    <input
+      type="text"
+      placeholder="Input name or #pokemon "
+      pattern="[A-Za-z0-9_-]@"
+      [(ngModel)]="id"
+    />
+    <button class="btn btn-success" (click)="getPokemon()">
+      <i class="fas fa-search"></i>
+    </button>
+  </div>
+  <div class="row">
+    <div class="col-sm-2">
+      <div
+        [style.background-color]="colors[pokeType]"
+        class="card border border-success fade-in"
+      >
+        <small class="text-muted">Pokemon #{{ id }}</small>
+
+        <div mdbRipple rippleColor="light">
+          <img class="imgCard fade-in" src="{{ pokeImg }}" alt="pokeImg" />
+        </div>
+
+        <div style="color: white" [style.background-color]="colors[pokeType]">
+          {{ pokeType | uppercase }}
+        </div>
+
+        <div class="card-body fade-in">
+          <h4 class="card-title text-center border-success">
+            {{ pokeName | uppercase }}
+          </h4>
+          <p>{{ pokeGenera }}</p>
+          <p class="card-text fade-in">
+            {{ pokeDesc }}
+          </p>
+
+          <button
+            class="btn btn-transparent item-center"
+            (click)="backPokemon()"
+          >
+            <i class="fas fa-angle-left"></i>
+          </button>
+          <button class="btn btn-transparent" (click)="nextPokemon()">
+            <i class="fas fa-angle-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <br />
+    </div>
+    <div class="col-sm-2">
+      <div [style.background-color]="colors[pokeType]" class="card border border-success fade-in">
+        <div class="card-body">
+          <h3 class="card-title">Base Stats</h3>
+
+          <ul *ngFor="let stats of pokeStats">
+            <p class="card-text">
+              {{ stats.stat.name | uppercase }}
+            </p>
+            <div class="progress">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                style="width: {{ stats.base_stat }}%"
+                aria-valuenow="0"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+          </ul>
+          <p class="card-text"></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-2 fade-in">
+      <div class="card">
+        <div [style.background-color]="colors[pokeType]" class="card-body">
+          <h2>Info</h2>
+          <h5>Evolved from : {{pokeEvolved}}</h5>
+          <img style="width: 15vh;" src="{{animate}}" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body"></div>
+      </div>
+    </div>
+  </div>
+
+
+    
+
+    
+     
+  
+
+  <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"
+  ></script>
+</body>

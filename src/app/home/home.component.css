@@ -1,0 +1,30 @@
+*{
+    font-family: "retro";
+    color: black
+}
+
+nav{
+ background-color: transparent;
+}
+
+.background {
+    background-image: url('/assets/images/fondogif.gif');
+    background-size:cover;
+    background-repeat:round;
+    height: 920px;
+    width: 100%;
+    background-position: center;
+    background-attachment: fixed;
+
+    
+ }
+
+ 
+ @media only screen and (max-width: 767px) {
+    .background {
+       background-size: cover;
+       height: 100vh;
+       width: 100%;
+       margin-left: 0%;
+    }
+ }

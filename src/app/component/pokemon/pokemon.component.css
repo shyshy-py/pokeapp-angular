@@ -1,0 +1,58 @@
+*{
+    font-family: "retro";
+    color: black
+}
+
+
+.imgCard{
+    width: 25vh;
+    height: 25vh;
+}
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    background-color: rgba(60, 196, 101, 0.527);
+    color: black;
+    
+}
+
+.btn-transparent:hover{
+    color: red;
+    background-color: white;
+}
+
+
+
+input{
+    background-color: transparent;
+    width: 35vh;
+    margin-bottom: 5px;
+    border-color: aquamarine;
+    border-style: groove;
+
+}
+
+.center{
+margin-top: 30vh;
+    display: grid;
+    place-content: center;
+}
+.loadAnimation{
+    left: 50%;
+    top: 50%;
+    
+
+
+animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }}

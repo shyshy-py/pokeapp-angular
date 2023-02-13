@@ -1,0 +1,24 @@
+<br /><br />
+<footer class="text-center text-white fixed-bottom">
+  <div class="text-center p-3 bg-success bg-gradient">
+    <button class="btn btn-black" (click)="mute = !mute">
+      <i class="fas fa-music"></i>
+    </button>
+
+    <a
+      class="text-white"
+      href="https://shyshy-py.github.io/WAPortfolio.github.io/"
+    >
+      © Wladimir Acevedo Dev
+    </a>
+    <i class="fab fa-github-alt"></i>
+  </div>
+  <audio
+    src="assets/sound/musicaFondo.mp3"
+    [muted]="mute"
+    autoplay=true
+    loop
+  ></audio>
+
+  
+</footer>
